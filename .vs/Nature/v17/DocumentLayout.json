@@ -1,0 +1,83 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "A:\\MyGames\\Nature\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7C4885EB-814F-4697-ADAC-F8BEA824635A}|Nature.csproj|a:\\mygames\\nature\\playerprefabs\\playermove.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C4885EB-814F-4697-ADAC-F8BEA824635A}|Nature.csproj|solutionrelative:playerprefabs\\playermove.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C4885EB-814F-4697-ADAC-F8BEA824635A}|Nature.csproj|A:\\MyGames\\Nature\\cameraprefabs\\camera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C4885EB-814F-4697-ADAC-F8BEA824635A}|Nature.csproj|solutionrelative:cameraprefabs\\camera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C4885EB-814F-4697-ADAC-F8BEA824635A}|Nature.csproj|A:\\MyGames\\Nature\\playerprefabs\\combatsystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C4885EB-814F-4697-ADAC-F8BEA824635A}|Nature.csproj|solutionrelative:playerprefabs\\combatsystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Camera.cs",
+              "DocumentMoniker": "A:\\MyGames\\Nature\\CameraPrefabs\\Camera.cs",
+              "RelativeDocumentMoniker": "CameraPrefabs\\Camera.cs",
+              "ToolTip": "A:\\MyGames\\Nature\\CameraPrefabs\\Camera.cs",
+              "RelativeToolTip": "CameraPrefabs\\Camera.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-03T12:16:44.96Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CombatSystem.cs",
+              "DocumentMoniker": "A:\\MyGames\\Nature\\PlayerPrefabs\\CombatSystem.cs",
+              "RelativeDocumentMoniker": "PlayerPrefabs\\CombatSystem.cs",
+              "ToolTip": "A:\\MyGames\\Nature\\PlayerPrefabs\\CombatSystem.cs",
+              "RelativeToolTip": "PlayerPrefabs\\CombatSystem.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-03T11:45:30.205Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PlayerMove.cs",
+              "DocumentMoniker": "A:\\MyGames\\Nature\\PlayerPrefabs\\PlayerMove.cs",
+              "RelativeDocumentMoniker": "PlayerPrefabs\\PlayerMove.cs",
+              "ToolTip": "A:\\MyGames\\Nature\\PlayerPrefabs\\PlayerMove.cs",
+              "RelativeToolTip": "PlayerPrefabs\\PlayerMove.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAAwCIAAAACAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-03T11:30:15.903Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

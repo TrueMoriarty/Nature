@@ -1,0 +1,54 @@
+[gd_scene load_steps=12 format=3 uid="uid://bjplijkpvxhri"]
+
+[ext_resource type="PackedScene" uid="uid://cu0nh6yqmdauu" path="res://PlayerPrefabs/Player.tscn" id="1_62kbl"]
+[ext_resource type="Texture2D" uid="uid://bmv2p0fcu0r4a" path="res://icon.svg" id="1_d5cjj"]
+[ext_resource type="PackedScene" uid="uid://pjw1e7k7jgm2" path="res://CameraPrefabs/MotionCamera.tscn" id="3_kkcil"]
+[ext_resource type="PackedScene" uid="uid://cf43wx1202425" path="res://дом_лес.tscn" id="4_0jj7y"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nd6tg"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_x2bwq"]
+sky_material = SubResource("ProceduralSkyMaterial_nd6tg")
+
+[sub_resource type="Environment" id="Environment_wmvx8"]
+background_mode = 2
+sky = SubResource("Sky_x2bwq")
+tonemap_mode = 2
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_p3bhe"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_djlbn"]
+size = Vector3(20, 0.1, 20)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tyxv4"]
+albedo_texture = ExtResource("1_d5cjj")
+
+[sub_resource type="BoxMesh" id="BoxMesh_acrc2"]
+material = SubResource("StandardMaterial3D_tyxv4")
+size = Vector3(20, 0.1, 20)
+
+[node name="TestScene" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_wmvx8")
+
+[node name="Floor" type="StaticBody3D" parent="."]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 0, -32.4879)
+physics_material_override = SubResource("PhysicsMaterial_p3bhe")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+shape = SubResource("BoxShape3D_djlbn")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
+mesh = SubResource("BoxMesh_acrc2")
+
+[node name="Player" parent="." instance=ExtResource("1_62kbl")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 2.32769, 2, 5.34234)
+_rotationSpeed = 20.0
+
+[node name="MotionCamera" parent="." instance=ExtResource("3_kkcil")]
+
+[node name="Дом_лес" parent="." instance=ExtResource("4_0jj7y")]
+transform = Transform3D(3.53553, 0, -3.53553, 0, 5, 0, 3.53553, 0, 3.53553, 0.571924, -4, -4.51829)
