@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bjplijkpvxhri"]
+[gd_scene load_steps=14 format=3 uid="uid://bjplijkpvxhri"]
 
 [ext_resource type="PackedScene" uid="uid://cu0nh6yqmdauu" path="res://PlayerPrefabs/Player.tscn" id="1_62kbl"]
 [ext_resource type="Texture2D" uid="uid://bmv2p0fcu0r4a" path="res://icon.svg" id="1_d5cjj"]
@@ -29,6 +29,12 @@ albedo_texture = ExtResource("1_d5cjj")
 material = SubResource("StandardMaterial3D_tyxv4")
 size = Vector3(20, 0.1, 20)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_ypilk"]
+size = Vector3(1, 5, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_hv3h3"]
+size = Vector3(1, 5, 1)
+
 [node name="TestScene" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -52,3 +58,12 @@ _rotationSpeed = 20.0
 
 [node name="Дом_лес" parent="." instance=ExtResource("4_0jj7y")]
 transform = Transform3D(3.53553, 0, -3.53553, 0, 5, 0, 3.53553, 0, 3.53553, 0.571924, -4, -4.51829)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.57769, 3, 1.92562)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_ypilk")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D/CollisionShape3D"]
+mesh = SubResource("BoxMesh_hv3h3")

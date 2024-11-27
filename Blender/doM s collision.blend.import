@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bfjvcdyiv8kgh"
-path="res://.godot/imported/Дом.лес.blend-05a43dd927aa9c6f9ddd39fbde7beccb.scn"
+uid="uid://bwepuykdchtlc"
+path="res://.godot/imported/doM s collision.blend-7c1e253072d486f6ef573a2995cc0340.scn"
 
 [deps]
 
-source_file="res://Blender/Дом.лес.blend"
-dest_files=["res://.godot/imported/Дом.лес.blend-05a43dd927aa9c6f9ddd39fbde7beccb.scn"]
+source_file="res://Blender/doM s collision.blend"
+dest_files=["res://.godot/imported/doM s collision.blend-7c1e253072d486f6ef573a2995cc0340.scn"]
 
 [params]
 
@@ -31,7 +31,24 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={}
+_subresources={
+"meshes": {
+"doM s collision_Cube_022": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 0.0,
+"lods/normal_split_angle": 0.0,
+"save_to_file/enabled": false,
+"save_to_file/path": ""
+}
+},
+"nodes": {
+"PATH:Cube_019": {
+"generate/physics": true
+}
+}
+}
 blender/nodes/visible=0
 blender/nodes/active_collection_only=false
 blender/nodes/punctual_lights=true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cu0nh6yqmdauu"]
+[gd_scene load_steps=9 format=3 uid="uid://cu0nh6yqmdauu"]
 
 [ext_resource type="Texture2D" uid="uid://bmv2p0fcu0r4a" path="res://icon.svg" id="1_7xqqm"]
 [ext_resource type="Script" path="res://PlayerPrefabs/PlayerMove.cs" id="1_oqmep"]
@@ -6,12 +6,6 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5y02b"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_0hr30"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_l83mt"]
-size = Vector3(0.2, 0.2, 2)
-
-[sub_resource type="BoxMesh" id="BoxMesh_qchyq"]
-size = Vector3(0.2, 0.2, 2)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ck0kn"]
 margin = 0.0
@@ -22,6 +16,9 @@ albedo_texture = ExtResource("1_7xqqm")
 
 [sub_resource type="SphereMesh" id="SphereMesh_q6abg"]
 material = SubResource("StandardMaterial3D_oatn4")
+
+[sub_resource type="BoxMesh" id="BoxMesh_qchyq"]
+size = Vector3(0.2, 0.2, 2)
 
 [node name="Player" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -34,18 +31,18 @@ shape = SubResource("CapsuleShape3D_5y02b")
 mesh = SubResource("CapsuleMesh_0hr30")
 skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
-shape = SubResource("BoxShape3D_l83mt")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
-mesh = SubResource("BoxMesh_qchyq")
-
 [node name="HeadShape" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 1, 0)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 1.5, 0)
 shape = SubResource("SphereShape3D_ck0kn")
 
 [node name="HeadMesh" type="MeshInstance3D" parent="HeadShape"]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+transform = Transform3D(-2, 0, -1.74846e-07, 0, 2, 0, 1.74846e-07, 0, -2, 0, 0, 0)
 mesh = SubResource("SphereMesh_q6abg")
 skeleton = NodePath("../..")
+
+[node name="Gun" type="MeshInstance3D" parent="."]
+
+[node name="GunInstanse" type="MeshInstance3D" parent="Gun"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+mesh = SubResource("BoxMesh_qchyq")
+skeleton = NodePath("")

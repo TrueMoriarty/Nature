@@ -1,3 +1,5 @@
+using System;
+using System.Diagnostics;
 using Godot;
 
 public partial class PlayerMove : CharacterBody3D
@@ -9,7 +11,11 @@ public partial class PlayerMove : CharacterBody3D
     [Export]
     private float _rotationSpeed = 1.5f;
     [Export]
-    private int _acceleration = 2;
+    private int _acceleration = 1;
+
+    [Export]
+    // Max rotation angle for head
+    private float _aimRotationSpeed = 1f;
 
     private const float _rayLenght = 1000;
 
@@ -20,7 +26,7 @@ public partial class PlayerMove : CharacterBody3D
     // Camera for raycast
     private Camera3D camera;
 
-    private CollisionShape3D head;
+    private MeshInstance3D head;
 
     // Get the gravity from the project settings to be synced with RigidBody nodes.
     private float gravity = ProjectSettings.GetSetting("physics/3d/default_gravity").AsSingle();
@@ -28,13 +34,13 @@ public partial class PlayerMove : CharacterBody3D
     public override void _Ready()
     {
         camera = GetNode<Node3D>("../MotionCamera").GetNode<Camera3D>("Camera3D");
-        head = GetNode<CollisionShape3D>("HeadShape");
+        head = GetNode<MeshInstance3D>("Gun");
     }
 
     public override void _PhysicsProcess(double delta)
 	{
         Move(delta);
-        LookAtCursor();
+        LookAtCursor(delta);
     }
 
     private void Move(double delta)
@@ -58,7 +64,7 @@ public partial class PlayerMove : CharacterBody3D
             targetBasis = new Basis(Vector3.Up, Mathf.Atan2(_playerDirection.X, _playerDirection.Z));
 
             // Smoothly rotate towards the target direction using Slerp
-            transform.Basis = transform.Basis.Slerp(targetBasis, (float)(_rotationSpeed * delta));
+            transform.Basis = transform.Basis.Slerp(targetBasis, _rotationSpeed * (float)delta);
             GlobalTransform = transform;
         }
         else
@@ -74,7 +80,7 @@ public partial class PlayerMove : CharacterBody3D
         return inputDir;
     }
 
-    private void LookAtCursor()
+    private void LookAtCursor(double delta)
     {
         // Get the cursor position in 2D on the screen
         Vector2 cursorPosition = GetViewport().GetMousePosition();
@@ -94,9 +100,13 @@ public partial class PlayerMove : CharacterBody3D
             Vector3 cursorWorldPosition = (Vector3)result["position"];
 
             Vector3 lookAtPosition = new Vector3(cursorWorldPosition.X, GlobalTransform.Origin.Y, cursorWorldPosition.Z);
+            
+            Vector3 directionToTarget = (GlobalTransform.Origin - lookAtPosition).Normalized();
 
+            //directionToTarget = GlobalTransform.Basis.Slerp(directionToTarget, (float)delta * _aimRotationSpeed);
+            
             // Rotate the character to face the point on the plane
-            head.LookAt(lookAtPosition, Vector3.Up);
+            head.LookAt(GlobalTransform.Origin + directionToTarget, Vector3.Up);
         }
     }
 }

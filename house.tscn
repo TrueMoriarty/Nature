@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cadn272bouttj"]
+
+[ext_resource type="PackedScene" uid="uid://bwepuykdchtlc" path="res://Blender/doM s collision.blend" id="1_fp1uc"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="doM s collision" parent="." instance=ExtResource("1_fp1uc")]
